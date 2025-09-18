@@ -19,7 +19,6 @@ describe("App Tests", () => {
 
   test("renderiza a lista", () => {
     render(<App />);
-    expect(screen.getByText("Lista de Tarefas")).toBeInTheDocument();
     expect(screen.getByText("Total de tarefas: 2")).toBeInTheDocument();
     expect(screen.getByText("tomar agua (talvez)")).toBeInTheDocument();
     expect(screen.getByText("assistir")).toBeInTheDocument();

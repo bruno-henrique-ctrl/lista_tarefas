@@ -1,0 +1,11 @@
+.bg {
+    background-image: url('../assets/bg.jpeg');
+    background-attachment: fixed;
+}
+
+.menina1 {
+    background-image: url('../assets/aaa.jpeg');
+    background-repeat: no-repeat;
+    background-size: 9rem;
+    background-position: -5px -20px;
+}

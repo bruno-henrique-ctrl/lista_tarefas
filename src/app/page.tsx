@@ -7,6 +7,9 @@ import NovaTarefa from "../components/NovaTarefa";
 import type { Task } from "../types";
 import { useContadorDeTarefas } from "../hook/useContadorDeTarefas";
 
+import styles from "./page.module.css";
+import Header from "@/components/Header";
+
 const App = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
@@ -30,10 +33,11 @@ const App = () => {
   const taskCount = useContadorDeTarefas(tasks);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center py-4 px-4">
-      <div className="w-6xl max-w-md bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center">Lista de Tarefas</h1>
-        <p className="text-gray-600 text-center mb-6">Total de tarefas: {taskCount}</p>
+    <div className={`${styles.bg} min-h-screen flex flex-col justify-center items-center py-4 px-4`}>
+      <Header />
+
+      <div className={`${styles.menina1} z-10 w-full max-w-md bg-white shadow-md rounded-lg p-6`}>
+        <p className="text-2xl font-bold text-right mb-6 text-orange-500">Total de tarefas: {taskCount}</p>
 
         <NovaTarefa onAddTask={addTask} />
 
