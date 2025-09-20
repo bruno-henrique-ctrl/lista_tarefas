@@ -12,6 +12,7 @@ import Header from "@/components/Header";
 
 const App = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const taskCount = useContadorDeTarefas(tasks);
 
   useEffect(() => {
     const initialTasks = getTasks();
@@ -29,8 +30,6 @@ const App = () => {
   const removeTask = (id: number) => {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
-
-  const taskCount = useContadorDeTarefas(tasks);
 
   return (
     <div className={`${styles.bg} min-h-screen flex flex-col justify-center items-center py-4 px-4`}>
